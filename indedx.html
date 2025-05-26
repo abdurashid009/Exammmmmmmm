@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Market</title>
+  <link rel="stylesheet" href="style.css" />
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
+
+</head>
+
+<body>
+  <div id="message" class="message">
+    <h4>Sotib olindi</h4>
+    <img src="imgUz/zelenaja-galochka-v-kruzhke.png" alt="" width="20px"> 
+  </div>
+  <div id="loadingScreen">
+    <img src="imgUz/megamarket.svg" alt="Market Logo" id="logo">
+    <h1 style="color: rgb(61, 0, 131);">Mega Marketga xush kelibsiz</h1>
+    <p>Eng yaxshi mahsulotlarni ko'rib chiqing!</p>
+    <div class="spinner">
+      <div></div>
+      <div></div>
+      <div></div>
+      <div></div>
+      <div></div>
+      <div></div>
+      <div></div>
+      <div></div>
+      <div></div>
+      <div></div>
+      <div></div>
+      <div></div>
+      </div>
+  </div>
+
+  <header>
+    <nav>
+      <img src="imgUz/megamarket.svg" alt="" width="100px">
+      <div class="section">
+        <input type="text" id="searchInput" placeholder="   Mahsulotlarni qidirish..." />
+      </div>
+      <ul>
+        <select name="language" id="lang" onchange="changeLanguage()">
+          <option value="uz">O'zbekcha</option>
+          <option value="ru">Русский</option>
+        </select>
+        
+        <button id="darkToggle"><span id="dark">Dark-Mode</span><span id="light">Light-Mode</span></button>
+        <select name="login" id="log" onchange="changeLogin()">
+          <option value="lo">Login</option>
+          <option value="lo">Sign In</option>
+          <option value="re">Sign Up</option>
+        </select>
+        <ul>
+  <div id="profileBox">
+    <div class="images_box">
+      <img src="newImg/profile-icon-person-user-19.png" alt="" width="20px">
+    </div>
+  </div>
+    <div id="prof" class="profile-table">
+      <img src="newImg/profile-icon-person-user-19.png" alt="" width="20px">
+       <span id="usernameDisplay">
+
+       </span>
+    <button onclick="logout()">Logout</button>
+    </div>
+      </ul>
+    </nav>
+    <section>
+
+      <button id="shop">
+        <h2>🛒Savatcha</h2>
+      </button>
+      <select name="sortName" id="sortName">
+        <option value="a-z">Tanlash</option>
+        <option value="a-z">A dan Z gacha</option>
+        <option value="z-a">Z dan A gacha</option>
+      </select>
+      <select name="sortPrice" id="sortPrice">
+        <option value="low-high">Arzondan Qimmatga</option>
+        <option value="high-low">Qimmatdan Arzonga</option>
+      </select>
+      <select name="catalog" id="catalog">
+        <option value="">Select Category</option>
+      </select>
+      
+      <button class="btnwww" id="startSellingBtn">Sotishni boshlash</button>
+      <button class="btnwww www" onclick="refresh()">🧹</button>
+      <div id="sellForm" style="display: none; margin-top: 20px;">
+        <input type="text" id="newTitle" placeholder="Mahsulot nomi" />
+        <input type="text" id="newBrand" placeholder="Brend" />
+        <input type="text" id="newCategory" placeholder="Kategoriya" />
+        <input type="number" id="newStock" placeholder="Qoldiq (son)" />
+        <input type="number" id="newHeight" placeholder="Sof og‘irligi" />
+        <input type="number" id="newPrice" placeholder="Narxi" />
+        <input type="text" id="newImage" placeholder="Rasm URL" />
+        <button id="submitProduct">Mahsulotni joylash</button>
+      </div>
+
+    </section>
+
+  </header>
+
+  <main>
+      <div class="swiper-father">
+         <section class="swiper mySwiper">
+      <div class="swiper-wrapper">
+        <div class="swiper-slide"><img src="imgUz/d07mq6lpb7f46s88q100.jpg" alt="" width="100%"></div>
+        <div class="swiper-slide"><img src="imgUz/d07nnrmf4hvqhbr3vr2g.jpg" alt="" width="100%"></div>
+        <div class="swiper-slide"><img src="imgUz/d08cr2ui4n37npaqntfg.jpg" alt="" width="100%"></div>
+        <div class="swiper-slide"><img src="imgUz/cvcg2f3vgbkm5ehkika0.jpg" alt="" width="100%"></div>
+        <div class="swiper-slide"><img src="imgUz/d07o9rdpb7f46s88qkdg.jpg" alt="" width="100%"></div>
+        <div class="swiper-slide"><img src="imgUz/d03ipami4n37npapm39g.jpg" alt="" width="100%"></div>
+        <div class="swiper-slide"><img src="imgUz/d03315k7fd1idpht2plg.jpg" alt="" width="100%"></div>
+        <div class="swiper-slide"><img src="img/d08c1vmf4hvqhbr44bpg.jpg" alt="" width="100%"></div>
+   
+        <div class="swiper-slide"><img src="newImg/cvn8hvk7fd1p445r1blg.jpg" alt="" width="100%"></div>
+        <div class="swiper-slide"><img src="newImg/d0d610r3uvph509t1g40.jpg" alt="" width="100%"></div>
+        <div class="swiper-slide"><img src="newImg/d0e9nfgn274j5sclsod0.jpg" alt="" width="100%"></div>
+        <div class="swiper-slide"><img src="newImg/d0gutcq7s4fo7mq8tilg.jpg" alt="" width="100%"></div>
+        <div class="swiper-slide"><img src="newImg/d0hdn7a7s4fo7mq9006g.jpg" alt="" width="100%"></div>
+        <div class="swiper-slide"><img src="newImg/d0hkdra7s4fo7mq92t1g.jpg" alt="" width="100%"></div>
+        <div class="swiper-slide"><img src="newImg/d0hknbb3uvph509u09sg.jpg" alt="" width="100%"></div>
+        <div class="swiper-slide"><img src="newImg/d0m0uu0n274j5scni3p0.jpg" alt="" width="100%"></div>
+        <div class="swiper-slide"><img src="newImg/d0m17pa7s4fo7mqa1om0.jpg" alt="" width="100%"></div>
+        <div class="swiper-slide"><img src="newImg/d0m1b30n274j5scni7f0.jpg" alt="" width="100%"></div>
+        <div class="swiper-slide"><img src="newImg/d0m27sb3uvph509uvk10.jpg" alt="" width="100%"></div>
+        <div class="swiper-slide"><img src="newImg/d0m3a1a7s4fo7mqa2i5g.jpg" alt="" width="100%"></div>
+        <div class="swiper-slide"><img src="newImg/d0m4goj3uvph509v0gig.jpg" alt="" width="100%"></div>
+        <div class="swiper-slide"><img src="newImg/d0mnv9on274j5scnnuv0.jpg" alt="" width="100%"></div>
+ 
+      </div>
+
+      <div class="swiper-button-next"></div>
+      <div class="swiper-button-prev"></div>
+      <div class="swiper-pagination"></div>
+    </section>
+      </div>
+    <div id="products"></div>
+    <div id="productList" class="grid"></div>
+  </main>
+  <div id="cart">
+    <h2>🛒 Savatcha</h2>
+    <button id="close">X</button>
+    <div id="cartItems"></div>
+    <h3 id="totalPrice">Umumiy narx: $0</h3>
+  </div>
+  <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+  <script src="script.js"></script>
+</body>
+
+</html>

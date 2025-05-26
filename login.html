@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>Sign In</title>
+  <style>
+    body{
+        background: url(imgUz/geometric-gradient-futuristic-background_23-2149116406.avif) no-repeat center/cover;
+        height: 100vh;
+        width: 100%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        font-family: Arial, Helvetica, sans-serif;
+    }
+    .container{
+        width: 50%;
+        height: 50vh;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        gap: 20px;
+        color: white;
+        background-color: #c7c7c727;
+        backdrop-filter: blur(10px);
+        border-radius: 20px;
+    }
+    input{
+        width: 70%;
+        height: 30px;
+        padding-left: 30px;
+        border-radius: 8px;
+        outline: none;
+        border: none;
+    }
+    button{
+        background-color: rgba(0, 255, 0, 0.664);
+        width: 160px;
+        height: 30px;
+        border: none;
+        border-radius: 5px;
+        backdrop-filter: blur(10px);
+        color: rgb(24, 24, 24);
+        font-weight: bold;
+    }
+    .message {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      width: 30%;
+      height: 20px;
+      gap: 10px;
+      background-color: #e1f7e1;
+      border: 1px solid green;
+      border-radius: 25px;
+      padding: 10px;
+      margin-top: 20px;
+      color: green;
+      font-size: small;
+      position: absolute;
+      top: -172px;
+      left: 35%;
+    }
+    .message.error {
+      background-color: #ffe1e1;
+      border-color: red;
+    }
+  </style>
+</head>
+<body>
+     <div class="container">
+        <div id="message" class="message" style="display: none;">
+            <h4 id="msgText"></h4>
+            <img id="msgIcon" src="" alt="" width="20px">
+          </div>
+      <h1>Akkauntga kirish</h1>
+      <input type="text" id="name" placeholder="Ism">
+      <input type="text" id="surname" placeholder="Familiya">
+      <input type="password" id="password" placeholder="Parol">
+      <button id="login">Kirish</button>
+    
+     </div>
+  <script>
+    document.getElementById('login').addEventListener('click', () => {
+      const name = document.getElementById('name').value.trim();
+      const surname = document.getElementById('surname').value.trim();
+      const password = document.getElementById('password').value.trim();
+
+      const savedName = localStorage.getItem('registeredName');
+      const savedSurname = localStorage.getItem('registeredSurname');
+      const savedPassword = localStorage.getItem('registeredPassword');
+
+      const message = document.getElementById('message');
+      const msgText = document.getElementById('msgText');
+      const msgIcon = document.getElementById('msgIcon');
+
+      // Tozalash
+      message.classList.remove("error");
+
+      if (name === savedName && surname === savedSurname && password === savedPassword) {
+        localStorage.setItem("isLoggedIn", "true");
+
+        msgText.innerText = "Akkauntga muvoffaqiyatli kirildi";
+        msgIcon.src = "imgUz/zelenaja-galochka-v-kruzhke.png";
+        message.style.display = "flex";
+
+        setTimeout(() => {
+          window.location.href = "indedx.html";
+        }, 2500);
+      } else {
+        msgText.innerText = "Xato ma'lumot ❌";
+        msgIcon.src = "imgUz/xato.png"; 
+        message.classList.add("error");
+        message.style.display = "flex";
+
+        setTimeout(() => {
+          message.style.display = "none";
+        }, 3000);
+      }
+    });
+    
+  </script>
+  
+</body>
+</html>
